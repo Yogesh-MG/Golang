@@ -23,21 +23,16 @@ func calculation(a int, b int, c string)int{
 		case "/":{
 			ans =  a/b
 		}
-		case "^":{
-			ans =  a^b
-		}
 	}
 	return ans
 }
 
 func even_odd(a int) string {
-	var out string
 	if (a%2) == 0 {
-		out = "the number is even"
+		return "the number is even"
 	}else{
-		out = "the number is odd"
+		return "the number is odd"
 	}
-	return out
 }
 
 func first_10_square()[]float64{
@@ -68,15 +63,16 @@ func swap(a, b int) (int, int){
 func sum_average_reverse(arr []int)(int, int, []int){
 	var sum int
 	n := len(arr)
-
-	for i:=0;i<n/2;i++{
-		arr[i], arr[n-1-i] =arr[n-1-i], arr[i] 
-	}
-
+	//sum
 	for _, val := range arr{
 		sum += val
 	}
+	//avg
 	avg := sum/len(arr)
+	//reverse
+	for i:=0;i<n/2;i++{
+		arr[i], arr[n-1-i] =arr[n-1-i], arr[i] 
+	}
 
 	return (sum), (avg), (arr)
 }
